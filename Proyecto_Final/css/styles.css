@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1b45cf;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    background-color: #1b45cf;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.productos-container-fluid {
+    display: flex;
+    flex-wrap: wrap; /* Cambiado de center a wrap */
+    justify-content: space-around;
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: calc(100% - 2cm); /* Asegúrate de que esto es lo que necesitas */
+    margin: 0 auto;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#carrito {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 50%;
+    text-align: center;
+}
+
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrito li {
+    margin: 0.5rem 0;
+}
+
+.registro-container {
+    border: 1px solid #ccc;
+    padding: 2rem;
+    width: 50%;
+    text-align: center;
+}
+
+.registro-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registro-container label,
+.registro-container input {
+    margin: 0.5rem 0;
+    width: 80%;
+}
+
+.registro-container button {
+    margin-top: 1rem;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+}
+
+/* Estilos para el perfil de usuario y el menú desplegable */
+.user-profile {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.auth-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp-button {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    bottom: 11px;
+    right: 30px;
+    background: #0df053;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.whatsapp-button:hover {
+    text-decoration: none;
+    color: #0df053;
+    background: #fff;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.whatsapp-button img {
+    animation: bounce 2s infinite;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio e Inventario</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Visión Limpieza Hogar</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+            </ul>
+        </nav>      
+    </header>
+    <main>
+        <section id="intro">
+            <h2>Bienvenidos</h2>
+            <p>Conoce nuestros productos y servicios.</p>
+        </section>
+        <section id="productos">
+            <h2>Productos</h2>
+            <div class="productos-container-fluid">
+                <div class="producto">
+                    <h3>Detergente</h3>
+                    <img src="" alt="" style="width: 100px; height: 75px;">
+                    <p>Precio: $7.000</p>
+                    <button onclick="agregarAlCarrito('Detergente', 10)">Agregar al Carrito</button>
+                </div>
+                <div class="producto">
+                    <h3>Desinfectante</h3>
+                    <img src="" alt="" style="width: 55px;">
+                    <p>Precio: $4.000</p>
+                    <button onclick="agregarAlCarrito('Desinfectante', 8)">Agregar al Carrito</button>
+                </div>
+                <div class="producto">
+                    <h3>Jabón Líquido</h3>
+                    <img src="" alt="" style="width: 55px;">
+                    <p>Precio: $5.000</p>
+                    <button onclick="agregarAlCarrito('Jabón Líquido', 5)">Agregar al Carrito</button>
+                </div>
+                <!-- Puedes agregar más productos aquí -->
+            </div>
+        </section>
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p>Total: $<span id="total-carrito">0</span></p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Empresa de Productos de Limpieza</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userProfile = document.getElementById('userProfile');
+            const authMenu = document.getElementById('authMenu');
+            const usernameDisplay = document.getElementById('usernameDisplay');
+            const profilePic = document.getElementById('profilePic');
+
+            if (isAuthenticated()) {
+                const username = sessionStorage.getItem('username');
+                const profileImage = sessionStorage.getItem('profileImage') || '../images/default-profile.png';
+                usernameDisplay.textContent = username;
+                profilePic.src = profileImage;
+                userProfile.style.display = 'flex';
+                authMenu.style.display = 'none';
+            } else {
+                userProfile.style.display = 'none';
+                authMenu.style.display = 'flex';
+            }
+        });
+
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.classList.toggle('show');
+        }
+
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = '../html/login.html';
+        }
+
+        function isAuthenticated() {
+            return sessionStorage.getItem('authenticated') === 'true';
+        }
+
+        function uploadProfilePic() {
+            // Aquí puedes agregar la lógica para tomar o subir una foto de perfil
+            alert('Funcionalidad para tomar o subir una foto de perfil');
+        }
+    </script>
+
+    <script>
+        document.getElementById('whatsapp-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            var phoneNumber = '573014878404';
+            var message = 'Hola quiero más información de cuanto vales prostituta';
+            var urlMobile = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+            var urlDesktop = 'https://web.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+
+            // Detectar si el usuario está en un dispositivo móvil
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                window.open(urlMobile, '_blank');
+            } else {
+                window.open(urlDesktop, '_blank');
+            }
+        });
+    </script>
+
+    <!-- Logotipo de WhatsApp -->
+    <a href="#" id="whatsapp-link" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="js/menu.js"></script>
+
+</body>
+</html>
